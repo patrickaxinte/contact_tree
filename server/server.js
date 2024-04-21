@@ -17,13 +17,13 @@ const smtpConfig = {
     secure: true, // true for 465, false for other ports
     auth: {
       user: 'contact@xtpatdrive.site',
-      pass: 'Dbd842b1-44C5-4cDc-ab01-01b0c6c89683'
+      pass: process.env.SMTP_PASSWORD
     }
   };
   
   // MongoDB configuration
   const mongoConfig = {
-    url: 'mongodb+srv://patrickaxinte:PaxmdkDRVE0r2Dhex@patrickcluster.cvdctdk.mongodb.net/contact_tree',
+    url: 'mongodb+srv://patrickaxinte:' + process.env.MONGO_DB_PASSWORD + '@patrickcluster.cvdctdk.mongodb.net/contact_tree',
     dbName: 'contact_tree'
   };
   
