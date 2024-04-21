@@ -11,22 +11,26 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // SMTP configuration
+require('dotenv').config();
+
 const smtpConfig = {
-    host: 'mail.spacemail.com',
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: 'contact@xtpatdrive.site',
-      pass: process.env.SMTP_PASSWORD
-    }
-  };
+  host: 'mail.spacemail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'contact@xtpatdrive.site',
+    pass:  process.env.SMTP_PASSWORD 
+  }
+};
+
   
-  // MongoDB configuration
-  const mongoConfig = {
-    url: 'mongodb+srv://patrickaxinte:' + process.env.MONGO_DB_PASSWORD + '@patrickcluster.cvdctdk.mongodb.net/contact_tree',
-    dbName: 'contact_tree'
-  };
+// MongoDB configuration
+const mongoConfig = {
+  url: 'mongodb+srv://patrickaxinte:' + process.env.MONGO_DB_PASSWORD + '@patrickcluster.cvdctdk.mongodb.net/contact_tree',
+  dbName: 'contact_tree'
+};
   
+app.set('view engine', 'ejs'); // Set EJS as the view engine
 
 // Create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport(smtpConfig);
