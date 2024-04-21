@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactTree Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/profile.jpg" alt="My Profile Picture" class="profile-pic">
+        <h1>Patrick Axinte</h1>
+        <p>Computer Science Student</p>
+    </header>
+
+    <nav>
+        <a href="https://www.instagram.com/patrickaxinte" target="_blank">Instagram</a>
+        <a href="https://github.com/patrickaxinte" target="_blank">GitHub</a>
+        <a href="https://twitter.com/PAxinte" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/axintepatrick/" target="_blank">Facebook</a>
+        <a href="https://www.threads.net/@patrickaxinte" target="_blank">Threads</a>
+    </nav>
+
+    <button id="togglePortfolio" class="nav-button">Show Portfolio</button>
+
+    <div class="portfolio" id="portfolioSection" style="display: none;">
+        <div class="portfolio-item">
+            <img src="images/project1.jpg" alt="Project 1">
+            <p>Project 1</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/project2.png" alt="Project 2">
+            <p>Project 2</p>
+        </div>
+        <!-- Add more portfolio items as needed -->
+    </div>
+
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="/send" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="formMessage"></div>
+    </div>
+
+    <script src="/main.js"></script>
+
+</body>
+</html>

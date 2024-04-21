@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #30cfd0, #330867);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Header section */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-pic img {
+        transform: scale(1.5);
+        object-position: center;
+    }
+
+    nav a {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .portfolio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #togglePortfolio {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .contact-form {
+        max-width: 300px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+    .contact-form button {
+        padding: 8px 16px;
+    }
+}
+
+/* Styles for tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+
+    nav a {
+        width: 180px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    #togglePortfolio {
+        width: 180px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .contact-form {
+        max-width: 350px;
+    }
+}
+
+/* Additional global styles */
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile-pic {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(2.3);
+    object-position: top 17px right -41px;
+}
+
+
+/* Navigation section */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    background-color: #ffffff00;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ffffff;
+        color: #333;
+    }
+}
+
+/* Portfolio section */
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#togglePortfolio {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    background-color: #ffffff00;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#togglePortfolio:hover {
+    background-color: #ffffff;
+    color: #333;
+}
+
+
+.portfolio-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+}
+
+ /* Contact form */
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form h2 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-form button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto; /* Pushes the button to the bottom */
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
+}
+
+.contact-form button:hover {
+    background-color: #004d4d;
+}
+
+
