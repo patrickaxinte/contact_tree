@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactTree Page</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     <header>
@@ -38,25 +37,16 @@
 
     <div class="contact-form">
         <h2>Contact Me</h2>
-        <!-- Note the action now points to '/send' which should match your Express POST route -->
         <form action="/send" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <div id="formMessage"></div>
     </div>
 
-    <script>
-        // JavaScript to toggle the portfolio section
-        document.getElementById('togglePortfolio').addEventListener('click', function() {
-            var portfolioSection = document.getElementById('portfolioSection');
-            if (portfolioSection.style.display === 'none') {
-                portfolioSection.style.display = 'block';
-            } else {
-                portfolioSection.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="/main.js"></script>
+
 </body>
 </html>

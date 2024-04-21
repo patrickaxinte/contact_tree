@@ -10,7 +10,8 @@
 /* Basic styling */
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(to right, #30cfd0, #330867);
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147)); 
+    transition: background 0.5s; 
     color: white;
     min-height: 100vh;
     display: flex;
@@ -144,7 +145,6 @@ header p {
     object-position: top 17px right -41px;
 }
 
-
 /* Navigation section */
 nav {
     display: flex;
@@ -184,6 +184,86 @@ nav a {
     gap: 20px;
 }
 
+.portfolio-item {
+    width: auto;  
+    height: auto;  
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9; 
+    color: #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; 
+}
+
+.portfolio-item img {
+    width: auto; /* Adjust width as needed, auto will maintain the aspect ratio */
+    height: 140px; /* Increase the height as desired */
+    object-fit: cover; /* Maintain the aspect ratio of the image */
+    border-radius: 10px; /* Rounded corners (adjust as needed) */ 
+    margin-bottom: 10px;
+}
+
+.portfolio-item:hover {
+    background-color: #e0e0e0; /* Lighter gray background on hover */
+    cursor: pointer;
+}
+
+/* Styles for larger displays */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px; /* Increase base font size for larger displays */
+    }
+
+    header h1 {
+        font-size: 28px; /* Larger header font size */
+    }
+
+    header p {
+        font-size: 18px; /* Larger paragraph font size */
+    }
+
+    .profile-pic {
+        width: 200px; /* Larger profile picture */
+        height: 200px;
+    }
+
+    nav a {
+        width: 220px; /* Larger navigation links */
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .portfolio-item {
+        width: 300px; /* Set a fixed width for portfolio items */
+        height: 300px; /* Set a fixed height for portfolio items */
+    }
+
+    .contact-form {
+        max-width: 500px; /* Larger contact form */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: calc(100% - 20px); /* Adjust width accounting for padding */
+    }
+
+    .contact-form button {
+        padding: 12px 24px; /* Larger button padding */
+    }
+}
+
+/* Modify portfolio images to be square */
+.portfolio-item img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Auto height to maintain aspect ratio */
+    object-fit: cover; /* Cover the container without stretching */
+    border-radius: 0; /* Remove rounded corners for square images */
+}
+
 #togglePortfolio {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -207,27 +287,39 @@ nav a {
     color: #333;
 }
 
+#formMessage {
+    color: #28a745; /* Success message color */
+    background-color: #dff0d8; /* Light green background */
+    border-color: #d4edda; /* Light green border */
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for showing and hiding */
+    position: absolute; /* Position it relative to the form */
+    bottom: -50px; /* Position below the form */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    white-space: nowrap; /* Prevent wrapping on small screens */
+}
 
-.portfolio-item {
-    width: 200px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 10px;
+/* Add this class to show the message */
+.show-message {
+    opacity: 1; /* Make it visible */
 }
 
  /* Contact form */
 .contact-form {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -242,7 +334,7 @@ nav a {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -258,13 +350,13 @@ nav a {
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: auto; /* Pushes the button to the bottom */
-    margin-left: auto; /* Center the button horizontally */
-    margin-right: auto; /* Center the button horizontally */
+    margin-top: auto; 
+    justify-content: center;
 }
 
 .contact-form button:hover {
     background-color: #004d4d;
 }
+
 
 
