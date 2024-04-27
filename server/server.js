@@ -26,7 +26,7 @@ const smtpConfig = {
   
 // MongoDB configuration
 const mongoConfig = {
-  url: 'mongodb+srv://patrickaxinte:' + process.env.MONGO_DB_PASSWORD + '@patrickcluster.cvdctdk.mongodb.net/contact_tree',
+  url: 'mongodb+srv://patrickaxinte:' + process.env.MONGO_DB_PASSWORD + '@patrickcluster.cvdctdk.mongodb.net/contact_tree/?tls=true',
   dbName: 'contact_tree'
 };
   
@@ -90,8 +90,8 @@ app.post('/send', async (req, res) => {
     // Call sendEmail and insertFormData with the form data
     await sendEmail(req.body);
     await insertFormData(req.body);
-    // Send a JSON response with the success message
-    res.json({ message: 'Form submitted successfully!' });
+    // Redirect back to the main page with a success message as query parameter
+    res.redirect('/?message=Form%20submitted%20successfully!');
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ message: 'An error occurred.' });
