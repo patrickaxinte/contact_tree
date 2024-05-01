@@ -8,6 +8,43 @@ document.getElementById('togglePortfolio').addEventListener('click', function() 
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var portfolioSection = document.getElementById('portfolioSection');
+    document.getElementById('togglePortfolio').addEventListener('click', function() {
+        portfolioSection.style.display = (portfolioSection.style.display === 'none') ? 'block' : 'none';
+    });
+
+    var contactForm = document.getElementById('contact');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var from = formData.get('from').trim();
+        var md = formData.get('md').trim();
+
+        if (from && md) {
+            contactForm.submit.disabled = true;
+            fetch('/api/paperboy', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    var div = document.createElement('div');
+                    div.textContent = 'Thank You!';
+                    contactForm.parentNode.replaceChild(div, contactForm);
+                } else {
+                    throw new Error(data.message);
+                }
+            })
+            .catch(error => {
+                alert(error);
+                contactForm.submit.disabled = false;
+            });
+        }
+    });
+});
+
 
 // JavaScript to handle form submission and display message
 document.querySelector('.contact-form form').addEventListener('submit', function(event) {
@@ -33,7 +70,4 @@ document.querySelector('.contact-form form').addEventListener('submit', function
         console.error('Error:', error);
     });
 });
-
-
-
 

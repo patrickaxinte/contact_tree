@@ -146,7 +146,7 @@ header p {
     object-position: top 17px right -41px;
 }
 
-/* Navigation section */
+/* Navigation section with glassy buttons */
 nav {
     display: flex;
     flex-direction: column;
@@ -158,23 +158,25 @@ nav a {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: white;
+    color: white; /* Text color */
     text-decoration: none;
-    background-color: #ffffff00;
-    border: 1px solid white;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white background for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Border with transparency */
+    border-radius: 10px; /* Rounded corners */
     width: 220px;
     height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 10px;
+    backdrop-filter: blur(5px); /* Glass effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
 
-    &:hover {
-        cursor: pointer;
-        background-color: #ffffff;
-        color: #333;
-    }
+nav a:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+    color: #333; /* Text color change on hover */
 }
 
 /* Portfolio section */

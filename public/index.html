@@ -35,18 +35,18 @@
         <!-- Add more portfolio items as needed -->
     </div>
 
-    <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="/send" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="formMessage"></div>
-    </div>
+<!-- Contact Form  -->
+<div class="contact-form">
+    <h2>Contact Me</h2>
+    <form name="contact" method="POST" data-netlify="true" onsubmit="submit">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div id="formMessage"></div>
+</div>
 
-    <script src="/main.js"></script>
 
 </body>
 </html>
