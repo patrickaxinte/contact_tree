@@ -146,7 +146,6 @@ header p {
     object-position: top 17px right -41px;
 }
 
-
 /* Navigation buttons */
 nav a {
     font-family: "Poppins", sans-serif;
@@ -210,8 +209,6 @@ nav a:hover {
     }
 }
 
-
-
 /* Portfolio section */
 .portfolio {
     display: flex;
@@ -263,21 +260,6 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.5); /* Background color for the title */
     padding: 5px 10px; /* Padding for the title */
     border-radius: 5px; /* Rounded corners for the title */
-    
-}
-
-
-.portfolio-item .title {
-    position: top; /* Position the title absolutely */
-    top: 10px; /* Adjust top position as needed */
-    left: 50%; /* Center the title horizontally */
-    transform: translateX(-50%); /* Center the title horizontally */
-    font-size: 16px; /* Adjust font size as needed */
-    color: #fff; /* Title color */
-    background-color: rgba(0, 0, 0, 0.5); /* Background color for the title */
-    padding: 5px 10px; /* Padding for the title */
-    border-radius: 5px; /* Rounded corners for the title */
-    
 }
 
 /* Styles for larger displays */
@@ -332,6 +314,7 @@ nav a:hover {
     border-radius: 12px; /* Remove rounded corners for square images */
 }
 
+/* Success message */
 #formMessage {
     position: fixed;
     bottom: 20px;
@@ -349,8 +332,8 @@ nav a:hover {
     display: block; /* Show the message */
 }
 
-/* Contact Form Style*/
-form[name="contact"] {
+/* Contact form */
+.contact-form {
     width: 100%;
     max-width: 500px;
     padding: 20px;
@@ -364,15 +347,14 @@ form[name="contact"] {
     margin-bottom: 30px;
 }
 
-form[name="contact"] h2 {
+.contact-form h2 {
     color: #000;
-    text-align: center; /* Center the text of the title */
-    width: 100%; /* Full width to center in the form */
+    text-align: center;
     margin-bottom: 20px;
 }
 
-form[name="contact"] input,
-form[name="contact"] textarea {
+.contact-form input,
+.contact-form textarea {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     padding: 10px;
@@ -383,11 +365,11 @@ form[name="contact"] textarea {
     resize: none; /* Prevent resizing */
 }
 
-form[name="contact"] textarea {
+.contact-form textarea {
     height: 120px; /* Fixed height for textarea */
 }
 
-form[name="contact"] button {
+.contact-form button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -402,8 +384,6 @@ form[name="contact"] button {
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
-form[name="contact"] button:hover {
+.contact-form button:hover {
     background-color: #004d4d;
 }
-
-
