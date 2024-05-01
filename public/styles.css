@@ -211,6 +211,7 @@ nav a:hover {
 }
 
 
+
 /* Portfolio section */
 .portfolio {
     display: flex;
@@ -347,8 +348,9 @@ nav a:hover {
 #formMessage.show-message {
     display: block; /* Show the message */
 }
-/* Contact form */
-.contact-form {
+
+/* Contact Form Style*/
+form[name="contact"] {
     width: 100%;
     max-width: 500px;
     padding: 20px;
@@ -362,14 +364,15 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-.contact-form h2 {
+form[name="contact"] h2 {
     color: #000;
-    text-align: center;
+    text-align: center; /* Center the text of the title */
+    width: 100%; /* Full width to center in the form */
     margin-bottom: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
+form[name="contact"] input,
+form[name="contact"] textarea {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     padding: 10px;
@@ -380,11 +383,11 @@ nav a:hover {
     resize: none; /* Prevent resizing */
 }
 
-.contact-form textarea {
+form[name="contact"] textarea {
     height: 120px; /* Fixed height for textarea */
 }
 
-.contact-form button {
+form[name="contact"] button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -399,6 +402,8 @@ nav a:hover {
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
-.contact-form button:hover {
+form[name="contact"] button:hover {
     background-color: #004d4d;
 }
+
+
