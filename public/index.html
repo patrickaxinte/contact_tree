@@ -38,7 +38,10 @@
 <!-- Contact Form  -->
 <div class="contact-form">
     <h2>Contact Me</h2>
-    <form name="contact" method="POST" data-netlify="true" onsubmit="submit">
+    <form name="contact" method="POST" netlify-honeypot="bot-field" action="/success/" data-netlify="true" onsubmit="submit">
+        <p style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="bot-field" />
+        </p>
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
@@ -46,7 +49,6 @@
     </form>
     <div id="formMessage"></div>
 </div>
-
 
 </body>
 </html>
